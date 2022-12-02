@@ -94,7 +94,7 @@
     "paths": {
         "/v1/attendance/actions/complete": {
             "post": {
-                "description": "This operation completes actions for a list of employees whose actions fall within a date range. When an action is completed, this operation sets a completion date for each such action.",
+                "description": "whose actions fall within a date range. When an action is completed, this operation sets a completion date for each such action.",
                 "operationId": "CompleteActions",
                 "parameters": [
                     {

@@ -1,7 +1,7 @@
 ---
 title: "Manage Dimensions UI Sessions"
 excerpt: "Welcome to the Dimensions REST API Excerpt..."
-category: 638cba94abefb3005d89b59b
+category: 6389e7d4a8beeb002c0c7756
 ---
  
 

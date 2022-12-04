@@ -1,7 +1,7 @@
 ---
 title: "Authentication and security"
 excerpt: "Welcome to the Dimensions REST API Excerpt..."
-category: 638cbb8281a8ed0032f1e707
+category: 638cbea1798e61003d5ac689
 ---
 
 # Authentication and security

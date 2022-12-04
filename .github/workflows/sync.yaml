@@ -19,7 +19,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Attendance.json --key=rdme_xn8s9h2b3f539d1205f26879d52ad6710a55b321043e34cd039747bfaa6a7274a7dee6  --id=6389e7d4a8beeb002c0c7755 
+          rdme: openapi Work.json --key=rdme_xn8s9h2b3f539d1205f26879d52ad6710a55b321043e34cd039747bfaa6a7274a7dee6  --id=6389e7d4a8beeb002c0c7755 
           
        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action

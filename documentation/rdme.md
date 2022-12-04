@@ -1,7 +1,7 @@
 ---
 title: Syncing Docs via CLI / GitHub
 excerpt: Update your docs automatically with `rdme`, ReadMe's official CLI and GitHub Action!
-category: 638c1d0a1396920080295d3e
+category: 638c26339bf544009d996b87
 ---
 
 <!--
@@ -282,4 +282,4 @@ If you're troubleshooting issues in a GitHub Actions environment, you can enable
 >
 > We **strongly recommend** that you only enable step debug logs in private repositories. If working in a public repository, we suggest recreating your GitHub workflow setup (e.g. with your GitHub workflow files, OpenAPI definitions, and anything else you need for syncing to ReadMe) in a separate private repository for testing purposes before enabling this setting.
 >
-> If you do enable step debug logs in your repository and your logs produce sensitive information, here are [GitHub's docs on deleting logs](https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs#deleting-logs).
+> If you do enable step debug logs in your repository and your logs produce sensitive information, here are [GitHub's docs on deleting logs](https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs#deleting-logs).ŒÎ

@@ -1,7 +1,7 @@
 ---
 title: "Authenticate with federated user accounts"
 excerpt: "Welcome to the Dimensions REST API Excerpt..."
-category: 638c26339bf544009d996b87
+category: 638cba94abefb3005d89b59b
 ---
 
 # Authenticate with federated user accounts

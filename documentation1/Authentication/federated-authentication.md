@@ -4,7 +4,6 @@ excerpt: "Welcome to the Dimensions REST API Excerpt..."
 category: 638cc41be88294001cdb9daf
 ---
 
-# Authenticate with federated user accounts
 
 Requests against the Dimensions API must be authenticated and made over HTTPS. If these requirements are not met, the request fails.
 

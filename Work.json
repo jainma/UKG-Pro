@@ -358,7 +358,7 @@ paths:
           in: query
           name: queryName
           required: true
-		  default:string
+		  default: string
           schema:
             type: string
         - description: >-
@@ -367,7 +367,7 @@ paths:
           in: query
           name: activityName
           required: false
-		  default:string
+		  default: string
           schema:
             type: string
         - description: The ID of a query.

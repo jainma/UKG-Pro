@@ -345,7 +345,7 @@ tags:
 paths:
   /v1/work/activities:
     get:
-      description: This operation returns an activity by combined name.
+      description: name.
       operationId: Retrieve Activity by Name
       parameters:
         - description: The combined name of an activity (wildcards are supported).
@@ -490,7 +490,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Activity'
+              $ref: '#/components/schemas/ResultCodeProfile'
         description: The Create Activity request payload.
         required: true
       responses:

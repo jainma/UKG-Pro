@@ -488,6 +488,8 @@ paths:
     post:
       description: This operation creates and returns an activity.
       operationId: Create Activity
+	  x-readme:
+         explorer-enabled: false
       requestBody:
         content:
           application/json:

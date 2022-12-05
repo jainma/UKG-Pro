@@ -347,6 +347,8 @@ paths:
     get:
       description: name.
       operationId: Retrieve Activity by Name
+      x-readme:
+         explorer-enabled: false
       parameters:
         - description: The combined name of an activity (wildcards are supported).
           in: query

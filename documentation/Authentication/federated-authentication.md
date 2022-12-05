@@ -131,4 +131,4 @@ Even though your tokens are time-limited, they are very powerful. Do not share y
 
 ## Make an API call {#MakeAnAPICall}
 
-If you are ready to use your generated access token to make an API call against a tenant, proceed to the [Make an API call](C:3ca261ba-fc8b-4354-a2b1-6892e006c046) topic.
+If you are ready to use your generated access token to make an API call against a tenant, proceed to the [Make an API call](C:3ca261ba-fc8b-4354-a2b1-6892e006c046) topicB

@@ -1,7 +1,7 @@
 ---
 title: "Submit Bulk Download examples"
 excerpt: "Welcome to the Dimensions REST API Excerpt..."
-category: "636cb659316a1000880b4696"
+category: 638f472fe9f28609aef49fd5
 ---
 
 # Submit Bulk Download examples

@@ -1,7 +1,7 @@
 ---
 title: "Deprecation"
 excerpt: "Welcome to the Dimensions REST API Excerpt..."
-category: "636cb662255dd00016e0b208"
+category: 638f480a5bf1d90394330640
 ---
 
 # Deprecation

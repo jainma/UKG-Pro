@@ -1,7 +1,7 @@
 ---
 title: "Best practices and tips"
 excerpt: "Welcome to the Dimensions REST API Excerpt..."
-category: "63638713c59bff0262ce8c29"
+category: 638cc41be88294001cdb9daf
 ---
  
 # Best practices and tips

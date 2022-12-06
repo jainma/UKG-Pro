@@ -1,13 +1,13 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "description": "Rest APIs",
-        "title": "Rest APIs",
+        "description": "Attendance",
+        "title": "Attendance",
         "version": "1.0"
     },
     "tags": [
         {
-            "description": "From here you may browse our library of API resources, organized hierarchically by domain, or major functional area, logical subgroup, API resource, and all available operations against that resource. For more information about the concepts and technology behind our API, refer to the [Getting started](C:636f581c-50a8-41a7-af43-e5057f9c20bd) documentation.</p><p>Our platform provides a powerful application programming interface and documentation to help you develop secure, scalable, and high-performance applications that leverage the full breadth of capabilities offered by our backend services.</p><p markdown=\"1\">The Workforce Management suite's API is founded on a pragmatic implementation of the [representational state transfer](http://en.wikipedia.org/wiki/Representational_State_Transfer) architectural style and allows access to your organization's workforce management data using common HTTP methods and the [JSON](http://www.json.org) interchange format.</p>",
+            "description": "<p markdown=\"1\">From here you may browse our library of API resources, organized hierarchically by domain, or major functional area, logical subgroup, API resource, and all available operations against that resource. For more information about the concepts and technology behind our API, refer to the [Getting started](C:636f581c-50a8-41a7-af43-e5057f9c20bd) documentation.</p><p>Our platform provides a powerful application programming interface and documentation to help you develop secure, scalable, and high-performance applications that leverage the full breadth of capabilities offered by our backend services.</p><p markdown=\"1\">The Workforce Management suite's API is founded on a pragmatic implementation of the [representational state transfer](http://en.wikipedia.org/wiki/Representational_State_Transfer) architectural style and allows access to your organization's workforce management data using common HTTP methods and the [JSON](http://www.json.org) interchange format.</p>",
             "name": "API"
         },
         {
@@ -94,19 +94,8 @@
     "paths": {
         "/v1/attendance/actions/complete": {
             "post": {
-                "description": "whose actions fall within a date range. When an action is completed, this operation sets a completion date for each such action.",
-                "operationId": "CompleteActions",
-                "parameters": [
-                    {
-                        "description": "Complete Action request context: contains list of employees, start date, end date, and completion date.",
-                        "in": "header",
-                        "name": "request id",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
+                "description": "This operation completes actions for a list of employees whose actions fall within a date range. When an action is completed, this operation sets a completion date for each such action.",
+                "operationId": "Complete Actions",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -115,78 +104,30 @@
                             }
                         }
                     },
-                    "description": "Complete Action request context: contains list of employees, start date, end date, and completion date.",
+                    "description": "The Complete Actions request payload, which contains a list of employees, a start date, an end date, and a completion date.",
                     "required": true
                 },
                 "responses": {
-                    "100": {
-                        "description": "Trying 100 response."
-                    },
                     "200": {
-                        "description": "Success.",
-                        "headers": {
-                            "X-RateLimit-Limit": {
-                                "schema": {
-                                    "type": "integer"
-                                },
-                                "description": "Request limit per hour."
-                            },
-                            "X-RateLimit-Remaining": {
-                                "schema": {
-                                    "type": "integer"
-                                },
-                                "description": "The number of requests left for the time window."
-                            },
-                            "X-RateLimit-Reset": {
-                                "schema": {
-                                    "type": "string",
-                                    "format": "date-time"
-                                },
-                                "description": "The UTC date/time at which the current rate limit window resets."
-                            }
-                        },
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "items": {
-                                        "$ref": "#/components/schemas/ActionDocument"
-                                    },
-                                    "type": "array"
-                                }
-                            }
-                        }
-                    },
-                    "300": {
-                        "description": "Trying 300 response."
+                        "description": "Success."
                     },
                     "400": {
                         "description": "<ul><li>[WAT-101000] - The date format is invalid.</li><li>[WAT-101104] - Start date is required.</li><li>[WAT-101103] - End date is required.</li><li>[WAT-101002] - The date range is invalid. The start date must be on or before the end date.</li><li>[WAT-101105] - An employee ID list is required.</li><li>[WAT-100017] - Complete date is a required field.</li><li>[WAT-100034] - A conflict occurred. The following parameters are mutually exclusive: ids, qualifiers, refs.</li><li>[WAT-101109] - Employee reference list cannot be null or empty.</li><li>[WAT-101110] - The employee parameter {parameterName} cannot be null.</li></ul>"
                     },
                     "413": {
                         "description": "<ul><li>[WFP-90001] - The service limit has been exceeded by the API operation on {resource} for {X} employees and {Y} days.</li><li>[WFP-90002] - The service limit has been exceeded by the API operation on {resource} for {X} employees.</li></ul>"
-                    },
-                    "500": {
-                        "description": "Trying 500 response."
                     }
                 },
                 "summary": "Completes actions for one or more employees.",
-                "x-tagGroups": [
-                    {
-                        "name": "Customers",
-                        "tags": [
-                            "Customers",
-                            "Customer Authentication",
-                            "AML",
-                            "Customers Timeline"
-                        ]
-                    }
+                "tags": [
+                    "Actions"
                 ]
             }
         },
         "/v1/attendance/actions/documents/multi_read": {
             "post": {
                 "description": "This operation returns all documents associated with a group of actions for a list of employees within a date range.",
-                "operationId": "RetrieveActions'Documents",
+                "operationId": "Retrieve Actions' Documents",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -195,25 +136,12 @@
                             }
                         }
                     },
-                    "description": "Retrieve Action request context: contains a list of employees and a date range.",
+                    "description": "The Retrieve Actions' Documents request payload, which contains a list of employees and a date range.",
                     "required": true
                 },
                 "responses": {
                     "200": {
                         "description": "Success.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "items": {
-                                        "$ref": "#/components/schemas/ActionDocument"
-                                    },
-                                    "type": "array"
-                                }
-                            }
-                        }
-                    },
-                    "300": {
-                        "description": "Trying.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -241,7 +169,7 @@
         "/v1/attendance/actions/multi_read": {
             "post": {
                 "description": "This operation returns all actions for a list of employees within a date range irrespective of their status. Optionally, this operation returns only required actions with an initiated or triggered status for a list of employees within a date range.",
-                "operationId": "RetrieveMultipleActions",
+                "operationId": "Retrieve Multiple Actions",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -250,7 +178,7 @@
                             }
                         }
                     },
-                    "description": "Action request context: contains list of employees, start date, end date and optional find required only or completed flag.",
+                    "description": "The Retrieve Multiple Actions request payload, which contains a list of employees, a start date, an end date, and an optional find required only or completed Boolean.",
                     "required": true
                 },
                 "responses": {
@@ -283,17 +211,8 @@
         "/v1/attendance/actions/{id}": {
             "get": {
                 "description": "This operation returns information about an action by ID. You can choose to execute this operation either from the manager or employee perspective.",
-                "operationId": "RetrieveActionbyID",
+                "operationId": "Retrieve Action by ID",
                 "parameters": [
-                    {
-                        "description": " Header with query and path param",
-                        "in": "header",
-                        "name": "Accept-Language",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "description": "An identifier representing an Attendance Action.",
                         "in": "path",
@@ -305,7 +224,7 @@
                         }
                     },
                     {
-                        "description": "<em>[Optional]</em>A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.",
+                        "description": "<em>[Optional]</em> A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.",
                         "in": "query",
                         "name": "is_manager_role",
                         "required": false,
@@ -336,7 +255,7 @@
             },
             "post": {
                 "description": "This operation updates an action's completion date and user note by ID. If no completion date is provided, this operation deletes the existing date and returns the action to the initiated status.",
-                "operationId": "UpdateActionbyID",
+                "operationId": "Update Action by ID",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance action.",
@@ -357,7 +276,7 @@
                             }
                         }
                     },
-                    "description": "Update Action request context: ID of the action to update, completion date, and user note.",
+                    "description": "The Update Action by ID request payload, which contains the ID of the action to update, the completion date, and a user note.",
                     "required": true
                 },
                 "responses": {
@@ -387,7 +306,7 @@
         "/v1/attendance/actions/{id}/documents": {
             "get": {
                 "description": "This operation returns all the documents associated with an action by ID. You can choose to execute this operation either from the manager or employee perspective.",
-                "operationId": "RetrieveActionDocumentsbyID",
+                "operationId": "Retrieve Action Documents by ID",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance action.",
@@ -436,7 +355,7 @@
         "/v1/attendance/attendance_profiles": {
             "get": {
                 "description": "<p>This operation returns all attendance profiles.</p><br /><p>The associated Access Control Point is WORKFORCE_ATTENDANCE_SETUP.</p>",
-                "operationId": "RetrieveAllAttendanceProfiles",
+                "operationId": "Retrieve All Attendance Profiles",
                 "parameters": [
                     {
                         "description": "A Boolean indicator of whether or not the response returns all details of each attendance profile. When false, the response returns only the ID and name of each attendance profile.",
@@ -473,7 +392,7 @@
         "/v1/attendance/attendance_profiles/multi_read": {
             "post": {
                 "description": "<p>This operation returns attendance profiles by object references.</p><br /><p>The associated Access Control Point is WORKFORCE_ATTENDANCE_SETUP.</p>",
-                "operationId": "RetrieveAttendanceProfiles",
+                "operationId": "Retrieve Attendance Profiles",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -499,16 +418,6 @@
                     "207": {
                         "description": "<ul><li>[WAT-100228] - Some of the attendance profiles were not exported because of errors in the source data. Correct those errors and try again.</li></ul>"
                     },
-                    "300": {
-                        "description": "Trying 300.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Action"
-                                }
-                            }
-                        }
-                    },
                     "400": {
                         "description": "<p>Bad Request:</p><ul><li>[WAT-101005] - A request cannot be empty.</li><li>[WAT-101106] - Parameter is required: {parameterName}.</li><li>[WAT-100224] - Request contains multiple parameters.</li><li>[WAT-100225] - Attendance Profile does not exist.</li><li>[WAT-100226] - Attendance Profile by given name does not exist.</li><li>[WAT-100227] - Attendance Profile by given persistent id does not exist.</li><li>[WAT-100228] - Multi-Read request is partially successful.</li><li>[WAT-100229] - Atleast one parameter from id/qualifier/persistentId/ref is required.</li></ul>"
                     }
@@ -522,7 +431,7 @@
         "/v1/attendance/attendance_profiles/{id}": {
             "get": {
                 "description": "<p>This operation returns an attendance profile by ID.</p><br /><p>The associated Access Control Point is WORKFORCE_ATTENDANCE_SETUP.</p>",
-                "operationId": "RetrieveAttendanceProfilebyID",
+                "operationId": "Retrieve Attendance Profile by ID",
                 "parameters": [
                     {
                         "description": "The ID of an attendance profile.",
@@ -559,7 +468,7 @@
         "/v1/attendance/audit_records/multi_read": {
             "post": {
                 "description": "This operation returns auditing records for the specified auditing entities and employees within a date range. If auditing entities are not specified in a request, all entities are returned. Note that the start date and end date may have different meanings for different entity types, and that entities of different types may contain different properties.",
-                "operationId": "RetrieveAttendanceAuditRecords",
+                "operationId": "Retrieve Attendance Audit Records",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -568,7 +477,7 @@
                             }
                         }
                     },
-                    "description": "Retrieve Audit Records request context: contains list of employees, start date, end date. and a list of auditing entities.",
+                    "description": "The Retrieve Attendance Audit Records request payload, which contains a list of employees, start date, end date, and a list of auditing entities.",
                     "required": true
                 },
                 "responses": {
@@ -601,7 +510,7 @@
         "/v1/attendance/balance_adjustments": {
             "post": {
                 "description": "This operation updates balances for a list of employees within a date range based on a balance type and returns a list of balance adjustment IDs.",
-                "operationId": "UpdateandReturnBalances",
+                "operationId": "Update and Return Balances",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -610,7 +519,7 @@
                             }
                         }
                     },
-                    "description": "Update and Return Balances request context: contains a list of employees, balance type, and update date.",
+                    "description": "The Update and Return Balances request payload, which contains a list of employees, balance type, and update date.",
                     "required": true
                 },
                 "responses": {
@@ -640,7 +549,7 @@
         "/v1/attendance/balance_adjustments/multi_read": {
             "post": {
                 "description": "This operation returns point balance adjustments for a list of employees within a date range.",
-                "operationId": "RetrieveBalanceAdjustments",
+                "operationId": "Retrieve Balance Adjustments",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -649,7 +558,7 @@
                             }
                         }
                     },
-                    "description": "Retrieve Balance Adjustments request context: contains a list of employees, start date, and end date.",
+                    "description": "The Retrieve Balance Adjustments request payload, which contains a list of employees, start date, and end date.",
                     "required": true
                 },
                 "responses": {
@@ -682,7 +591,7 @@
         "/v1/attendance/balance_adjustments/multi_update": {
             "post": {
                 "description": "This operation updates balances for a list of employees within a date range based on a balance type and returns a list of balance adjustment IDs.",
-                "operationId": "BulkUpdateandReturnBalances",
+                "operationId": "Bulk Update and Return Balances",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -694,7 +603,7 @@
                             }
                         }
                     },
-                    "description": "Update and Return Balances request contexts: each context contains a list of employees, balance type, and update date.",
+                    "description": "The Update and Return Balances request payload, which contains an array of objects, each of which contains a list of employees, balance type, and update date.",
                     "required": true
                 },
                 "responses": {
@@ -724,7 +633,7 @@
         "/v1/attendance/balance_adjustments/{id}/mark_deleted": {
             "post": {
                 "description": "This operation marks point balance adjustments for deletion by ID.",
-                "operationId": "MarkBalanceAdjustmentsforDeletionbyID",
+                "operationId": "Mark Balance Adjustments for Deletion by ID",
                 "parameters": [
                     {
                         "description": "The ID of a point balance adjustment.",
@@ -754,7 +663,7 @@
         "/v1/attendance/balance_expirations/multi_read": {
             "post": {
                 "description": "This operation returns expiring points for a list of employees within a date range.",
-                "operationId": "RetrieveExpiringBalances",
+                "operationId": "Retrieve Expiring Balances",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -763,7 +672,7 @@
                             }
                         }
                     },
-                    "description": "Retrieve Expiring Balances request context contains a list of employees, start date, and end date.",
+                    "description": "The Retrieve Expiring Balances request payload, which contains a list of employees, start date, and end date.",
                     "required": true
                 },
                 "responses": {
@@ -796,7 +705,7 @@
         "/v1/attendance/balance_resets": {
             "post": {
                 "description": "This operation resets the balances for a list of employees within a date range and based on a balance type and returns a list of the reset balances.",
-                "operationId": "ResetBalances",
+                "operationId": "Reset Balances",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -805,7 +714,7 @@
                             }
                         }
                     },
-                    "description": "Reset Balances request context contains a list of employees, balance types, and reset date.",
+                    "description": "The Reset Balances request payload, which contains a list of employees, balance types, and reset date.",
                     "required": true
                 },
                 "responses": {
@@ -835,7 +744,7 @@
         "/v1/attendance/balance_resets/multi_read": {
             "post": {
                 "description": "This operation returns balance resets for a list of employees within a date range.",
-                "operationId": "RetrieveBalanceResets",
+                "operationId": "Retrieve Balance Resets",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -844,7 +753,7 @@
                             }
                         }
                     },
-                    "description": "Retrieve Balance Resets request context contains a list of employees, start date, end date, and balance types.",
+                    "description": "The Retrieve Balance Resets request payload, which contains a list of employees, start date, end date, and balance types.",
                     "required": true
                 },
                 "responses": {
@@ -877,7 +786,7 @@
         "/v1/attendance/balance_resets/multi_update": {
             "post": {
                 "description": "This operation resets the balances for a list of employees within a date range and based on a balance type and returns a list of the reset balances.",
-                "operationId": "BulkResetBalances",
+                "operationId": "Bulk Reset Balances",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -889,7 +798,7 @@
                             }
                         }
                     },
-                    "description": "Reset Balances request contexts: each context contains a list of employees, balance types, and reset date.",
+                    "description": "The Bulk Reset Balances request payload, which contains an array of objects, each of which contains a list of employees, balance types, and reset date.",
                     "required": true
                 },
                 "responses": {
@@ -919,7 +828,7 @@
         "/v1/attendance/balance_resets/{id}/mark_deleted": {
             "post": {
                 "description": "This operation marks point balance resets for deletion by ID.",
-                "operationId": "MarkBalanceResetsforDeletionbyID",
+                "operationId": "Mark Balance Resets for Deletion by ID",
                 "parameters": [
                     {
                         "description": "The ID of a point balance reset.",
@@ -949,7 +858,7 @@
         "/v1/attendance/balances/multi_read": {
             "post": {
                 "description": "This operation returns point balance summaries for a list of employees within a date range.",
-                "operationId": "RetrieveBalances",
+                "operationId": "Retrieve Balances",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -958,7 +867,7 @@
                             }
                         }
                     },
-                    "description": "Retrieve Balances request context contains a list of employees, start date, and end date.",
+                    "description": "The Retrieve Balances request payload, which contains a list of employees, a start date, and an end date.",
                     "required": true
                 },
                 "responses": {
@@ -991,7 +900,7 @@
         "/v1/attendance/discipline_levels/multi_read": {
             "post": {
                 "description": "This operation returns the discipline levels for a list of employees within a date range. If <code>includeDailyDiscLevels</code> is true, the discipline level for every day in the date range is returned. If <code>includeDailyDiscLevels</code> is false, only discipline level changes are returned.",
-                "operationId": "RetrieveDisciplineLevels",
+                "operationId": "Retrieve Discipline Levels",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1000,7 +909,7 @@
                             }
                         }
                     },
-                    "description": "Retrieve Discipline Levels request context contains a list of employees, date range, and daily value flag.",
+                    "description": "The Retrieve Discipline Levels request payload, which contains a list of employees, a date range, and a daily value Boolean.",
                     "required": true
                 },
                 "responses": {
@@ -1033,7 +942,7 @@
         "/v1/attendance/events": {
             "get": {
                 "description": "<p>This operation returns events that resulted in a specified action.</p><p><strong>Note:</strong> Perfect Attendance actions return an empty event list.</p>",
-                "operationId": "RetrieveEventsbyAction",
+                "operationId": "Retrieve Events by Action",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance Action.",
@@ -1102,7 +1011,7 @@
         "/v1/attendance/events/multi_create": {
             "post": {
                 "description": "This operation creates basic Attendance events for one or more employees.",
-                "operationId": "CreateEvents",
+                "operationId": "Create Events",
                 "parameters": [
                     {
                         "description": "A Boolean indicator of whether or not processing continues if errors are encountered. Defaults to false.",
@@ -1125,7 +1034,7 @@
                             }
                         }
                     },
-                    "description": "Events to create.",
+                    "description": "The Create Events request payload.",
                     "required": true
                 },
                 "responses": {
@@ -1168,7 +1077,7 @@
         "/v1/attendance/events/multi_read": {
             "post": {
                 "description": "This operation returns events for a list of employees within a date range.",
-                "operationId": "RetrieveEvents",
+                "operationId": "Retrieve Events",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1177,7 +1086,7 @@
                             }
                         }
                     },
-                    "description": "Retrieve Events request context contains a list of employees, start date, end date, and an Exclude Inconsequential Events flag.",
+                    "description": "The Retrieve Events request payload, which contains a list of employees, a start date, an end date, and an Exclude Inconsequential Events Boolean.",
                     "required": true
                 },
                 "responses": {
@@ -1210,10 +1119,10 @@
         "/v1/attendance/events/types": {
             "get": {
                 "description": "This operation returns a list of the following event types: basic, pattern, combined, lost_time, and perfect_attendance.",
-                "operationId": "RetrieveEventTypes",
+                "operationId": "Retrieve Event Types",
                 "parameters": [
                     {
-                        "description": "<em>[Optional]</em>A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.",
+                        "description": "<em>[Optional]</em> A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.",
                         "in": "query",
                         "name": "is_manager_role",
                         "required": false,
@@ -1246,7 +1155,7 @@
         "/v1/attendance/events/{id}": {
             "delete": {
                 "description": "This operation deletes a basic Attendance event by ID. The following event types cannot be deleted: patterns, combined events, lost time events, and perfect Attendance events.",
-                "operationId": "DeleteEventbyID",
+                "operationId": "Delete Event by ID",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance event.",
@@ -1274,7 +1183,7 @@
             },
             "post": {
                 "description": "This operation updates a basic attendance event by ID.",
-                "operationId": "UpdateEventbyID",
+                "operationId": "Update Event by ID",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance event.",
@@ -1322,7 +1231,7 @@
         "/v1/attendance/events/{id}/mark_deleted": {
             "post": {
                 "description": "This operation marks a basic attendance event as deleted by ID. The following event types cannot be marked as deleted: patterns, combined events, lost time events, and perfect Attendance events.",
-                "operationId": "MarkEventasDeletedbyID",
+                "operationId": "Mark Event as Deleted by ID",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance Event.",
@@ -1352,7 +1261,7 @@
         "/v1/attendance/events/{type}/{id}": {
             "get": {
                 "description": "This operation returns an event by an ID and type. The following are valid values for type: basic, pattern, combined, lost_time, and perfect_attendance.",
-                "operationId": "RetrieveEventbyID",
+                "operationId": "Retrieve Event by ID",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance event.",
@@ -1374,7 +1283,7 @@
                         }
                     },
                     {
-                        "description": "<em>[Optional]</em>A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.",
+                        "description": "<em>[Optional]</em> A Boolean indicator of whether or not the operation is executed with a manager role. When false, the operation is executed with an employee role.",
                         "in": "query",
                         "name": "is_manager_role",
                         "required": false,
@@ -1407,7 +1316,7 @@
         "/v1/attendance/markers/multi_create": {
             "post": {
                 "description": "This operation creates or updates Ignore History Markers or Ignore Timecard Markers for a list of employees. When an Ignore History Marker is added to an employee record, Attendance events earlier that the Ignore History Marker date are not processed. When an Ignore Timecard Marker is added to an employee record, Attendance events earlier than the Ignore Timecard Marker date are not processed.",
-                "operationId": "CreateorUpdateIgnoreMarkers",
+                "operationId": "Create or Update Ignore Markers",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1416,7 +1325,7 @@
                             }
                         }
                     },
-                    "description": "The request context for the Create or Update Ignore Markers operation contains marker type, a list of employees, and a date.",
+                    "description": "The Create or Update Ignore Markers request payload, which contains a marker type, a list of employees, and a date.",
                     "required": true
                 },
                 "responses": {
@@ -1446,7 +1355,7 @@
         "/v1/attendance/markers/multi_delete": {
             "post": {
                 "description": "This operation removes Ignore History Markers or Ignore Timecard Markers for a list of employees. When an Ignore History Marker is removed from an employee record, all Attendance events are processed. When an Ignore Timecard Marker is removed from an employee record, the Attendance Processor no longer ignores Timecard data preceding the Ignore Timecard Marker date.",
-                "operationId": "RemoveIgnoreMarkers",
+                "operationId": "Remove Ignore Markers",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1455,7 +1364,7 @@
                             }
                         }
                     },
-                    "description": "The request context for the Remove Ignore Markers operation contains marker type and a list of employees.",
+                    "description": "The Remove Ignore Markers request payload, which contains a marker type and a list of employees.",
                     "required": true
                 },
                 "responses": {
@@ -1475,7 +1384,7 @@
         "/v1/attendance/markers/multi_read": {
             "post": {
                 "description": "This operation returns history and Timecard data markers for a list of employees.",
-                "operationId": "RetrieveMarkers",
+                "operationId": "Retrieve Markers",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1484,7 +1393,7 @@
                             }
                         }
                     },
-                    "description": "The request context for the Retrieve Markers operation contains a list of employees and an optional start date and end date.",
+                    "description": "The Retrieve Markers request payload, which contains a list of employees and an optional start date and end date.",
                     "required": true
                 },
                 "responses": {
@@ -1517,7 +1426,7 @@
         "/v1/attendance/perfect_attendance/multi_read": {
             "post": {
                 "description": "This operation returns Perfect Attendance awards and violations for a list of employees within a date range.",
-                "operationId": "RetrievePerfectAttendanceTransactions",
+                "operationId": "Retrieve Perfect Attendance Transactions",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1526,7 +1435,7 @@
                             }
                         }
                     },
-                    "description": "The request context for the Retrieve Perfect Attendance Transactions operation contains a list of employees, a start date, and an end date.",
+                    "description": "The Retrieve Perfect Attendance Transactions request payload, which contains a list of employees, a start date, and an end date.",
                     "required": true
                 },
                 "responses": {
@@ -1559,7 +1468,7 @@
         "/v1/attendance/perfect_attendance_deductions/multi_read": {
             "post": {
                 "description": "This operation returns Perfect Attendance deductions for a list of employees within a date range.",
-                "operationId": "RetrievePerfectAttendanceDeductions",
+                "operationId": "Retrieve Perfect Attendance Deductions",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1568,7 +1477,7 @@
                             }
                         }
                     },
-                    "description": "The request context for the Retrieve Perfect Attendance Deductions operation contains a list of employees, a start date, and an end date.",
+                    "description": "The Retrieve Perfect Attendance Deductions request payload, which contains a list of employees, a start date, and an end date.",
                     "required": true
                 },
                 "responses": {
@@ -1601,17 +1510,20 @@
         "/v1/attendance/processor_requests": {
             "get": {
                 "description": "This operation returns all Attendance Processor requests.",
-                "operationId": "RetrieveAttendanceProcessorRequests",
-                "x-codeSamples": [
-                    {
-                        "lang": "cURL",
-                        "label": "CLI",
-                        "source": "curl --request POST \\\n--url 'https://data.apiexample.com/api/example/batch_query/json?format=json' \\\n--header 'content-type: application/octet-stream: ' \\\n--data '{}'\n"
-                    }
-                ],
+                "operationId": "Retrieve Attendance Processor Requests",
                 "responses": {
                     "200": {
-                        "description": "Success."
+                        "description": "Success.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProcessorRequest"
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Returns all Attendance Processor requests.",
@@ -1621,25 +1533,10 @@
             },
             "post": {
                 "description": "This operation creates an Attendance Processor request.",
-                "operationId": "CreateAttendanceProcessorRequest",
+                "operationId": "Create Attendance Processor Request",
                 "requestBody": {
                     "content": {
                         "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ProcessorRequest"
-                            }
-                        },
-                        "application/xml": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ProcessorRequest"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ProcessorRequest"
-                            }
-                        },
-                        "multipart/form-data": {
                             "schema": {
                                 "$ref": "#/components/schemas/ProcessorRequest"
                             }
@@ -1653,21 +1550,6 @@
                         "description": "Success.",
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProcessorRequest"
-                                }
-                            },
-                            "application/xml": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProcessorRequest"
-                                }
-                            },
-                            "application/x-www-form-urlencoded": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ProcessorRequest"
-                                }
-                            },
-                            "multipart/form-data": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ProcessorRequest"
                                 }
@@ -1687,7 +1569,7 @@
         "/v1/attendance/processor_requests/{id}": {
             "delete": {
                 "description": "This operation deletes an Attendance Processor request by ID.",
-                "operationId": "DeleteAttendanceProcessorRequestbyID",
+                "operationId": "Delete Attendance Processor Request by ID",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance Processor request.",
@@ -1715,7 +1597,7 @@
             },
             "get": {
                 "description": "This operation returns an Attendance Processor request by ID.",
-                "operationId": "RetrieveAttendanceProcessorRequestbyID",
+                "operationId": "Retrieve Attendance Processor Request by ID",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance Processor request.",
@@ -1750,7 +1632,7 @@
             },
             "put": {
                 "description": "This operation updates an existing Attendance Processor request by ID.",
-                "operationId": "UpdateAttendanceProcessorRequestbyID",
+                "operationId": "Update Attendance Processor Request by ID",
                 "parameters": [
                     {
                         "description": "The ID of an Attendance Processor request.",
@@ -1798,7 +1680,7 @@
         "/v1/attendance/profiles_assignments/multi_read": {
             "post": {
                 "description": "This operation returns profile assignments for a list of employees within a date range.",
-                "operationId": "RetrieveProfileAssignments",
+                "operationId": "Retrieve Profile Assignments",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1807,7 +1689,7 @@
                             }
                         }
                     },
-                    "description": "Attendance employee profile assignments request context: contains list of employees, start date, and end date.",
+                    "description": "The Retrieve Profile Assignments request payload, which contains a list of employees, a start date, and an end date.",
                     "required": true
                 },
                 "responses": {
@@ -1840,7 +1722,7 @@
         "/v1/attendance/rules/execute": {
             "post": {
                 "description": "This operation executes Attendance rules for a list of employees within a date range. The Attendance Processor runs the rules and generates any resulting actions for each employee.",
-                "operationId": "ExecuteAttendanceRulesforEmployees",
+                "operationId": "Execute Attendance Rules for Employees",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1872,13 +1754,14 @@
             "url": "/"
         }
     ],
+
     "components": {
         "schemas": {
             "CompleteActionsRequestContext": {
-                "description": "Request Context object for action completion.",
+                "description": "The action completion request model.",
                 "properties": {
                     "completionDateTime": {
-                        "description": "Date of completion.",
+                        "description": "The date of completion for an action in ISO_LOCAL_DATE format (YYYY-MM-DD).",
                         "type": "string"
                     },
                     "dateRange": {
@@ -1888,7 +1771,7 @@
                         "$ref": "#/components/schemas/ObjectReferenceList"
                     },
                     "note": {
-                        "description": "User Note.",
+                        "description": "The user note associated with an action.",
                         "type": "string"
                     }
                 },
@@ -1901,7 +1784,7 @@
                 "type": "object"
             },
             "AccessControlledRequestContext": {
-                "description": "Parent for other Attendance Request Contexts with flag manager role.",
+                "description": "The Attendance Request model for requests with a the manager role Boolean.",
                 "properties": {
                     "dateRange": {
                         "$ref": "#/components/schemas/AttendanceDateRange"
@@ -1910,7 +1793,7 @@
                         "$ref": "#/components/schemas/ObjectReferenceList"
                     },
                     "isManagerRole": {
-                        "description": "A flag that indicates whether user has a manager role.",
+                        "description": "A Boolean indicator of whether or not a user has the manager role.",
                         "type": "boolean"
                     }
                 },
@@ -1956,10 +1839,10 @@
                 "type": "object"
             },
             "ActionRequestContext": {
-                "description": "Request context object for Action.",
+                "description": "The Action request model.",
                 "properties": {
                     "completed": {
-                        "description": "A flag if set to true returns only completed actions.",
+                        "description": "A Boolean indicator of whether or not to return only completed actions.",
                         "type": "boolean"
                     },
                     "dateRange": {
@@ -1969,11 +1852,11 @@
                         "$ref": "#/components/schemas/ObjectReferenceList"
                     },
                     "isManagerRole": {
-                        "description": "A flag that indicates whether user has a manager role.",
+                        "description": "A Boolean indicator of whether or not a user has the manager role.",
                         "type": "boolean"
                     },
                     "requiredOnly": {
-                        "description": "A flag if set to true returns only required actions.",
+                        "description": "A Boolean indicator of whether or not to return only required actions.",
                         "type": "boolean"
                     }
                 },
@@ -2112,7 +1995,7 @@
                 "type": "object"
             },
             "ActionUpdateRequestContext": {
-                "description": "Request Context for updating an Action.",
+                "description": "The Update Action request model.",
                 "properties": {
                     "completionDateTime": {
                         "description": "Action completion date",
@@ -2326,7 +2209,7 @@
                 "type": "object"
             },
             "UpdateBalanceRequestContext": {
-                "description": "Request Context for Balance Update.",
+                "description": "The Balance Update request model.",
                 "properties": {
                     "amount": {
                         "description": "The balance amount to update.",
@@ -2339,7 +2222,7 @@
                         "$ref": "#/components/schemas/ObjectReferenceList"
                     },
                     "isManagerRole": {
-                        "description": "A flag that indicates whether user has a manager role.",
+                        "description": "A Boolean indicator of whether or not a user has the manager role.",
                         "type": "boolean"
                     },
                     "updateDateTime": {
@@ -2397,10 +2280,10 @@
                 "type": "object"
             },
             "GetBalancesRequestContext": {
-                "description": "Request Context for Get Balance Resets and Adjustments",
+                "description": "The Retrieve Balance Resets and Adjustments request model.",
                 "properties": {
                     "balanceTypes": {
-                        "description": "A list of balance type categories for filtering",
+                        "description": "A list of balance type categories for filtering.",
                         "items": {
                             "type": "string"
                         },
@@ -2413,7 +2296,7 @@
                         "$ref": "#/components/schemas/ObjectReferenceList"
                     },
                     "isManagerRole": {
-                        "description": "A flag that indicates whether user has a manager role.",
+                        "description": "A Boolean indicator of whether or not a user has the manager role.",
                         "type": "boolean"
                     }
                 },
@@ -2554,7 +2437,7 @@
                         "$ref": "#/components/schemas/ObjectReferenceList"
                     },
                     "isManagerRole": {
-                        "description": "A flag that indicates whether user has a manager role.",
+                        "description": "A Boolean indicator of whether or not a user has the manager role.",
                         "type": "boolean"
                     },
                     "resetDateTime": {
@@ -2724,7 +2607,7 @@
                 "type": "object"
             },
             "DisciplineLevelTransactionRequestContext": {
-                "description": "Request Context for Discipline Level Transaction.",
+                "description": "The Discipline Level Transaction request model.",
                 "properties": {
                     "dateRange": {
                         "$ref": "#/components/schemas/AttendanceDateRange"
@@ -2733,11 +2616,11 @@
                         "$ref": "#/components/schemas/ObjectReferenceList"
                     },
                     "includeDailyDiscLevels": {
-                        "description": "If false, returns only discipline level changes, otherwise returns all the dates within date range with corresponding discipline levels on every day.",
+                        "description": "A Boolean indicator of whether or not to return only discipline level changes. If false, all the dates within the specified date range with corresponding discipline levels on every day are returned.",
                         "type": "boolean"
                     },
                     "isManagerRole": {
-                        "description": "A flag that indicates whether user has a manager role.",
+                        "description": "A Boolean indicator of whether or not a user has the manager role.",
                         "type": "boolean"
                     }
                 },
@@ -3008,10 +2891,10 @@
                 "type": "object"
             },
             "EventRequestContext": {
-                "description": "Request Context for Event.",
+                "description": "The Event request model.",
                 "properties": {
                     "actionId": {
-                        "description": "Action Identifier.",
+                        "description": "The ID of an action.",
                         "format": "int64",
                         "type": "integer"
                     },
@@ -3019,7 +2902,7 @@
                         "$ref": "#/components/schemas/AttendanceDateRange"
                     },
                     "employeeId": {
-                        "description": "A reference to the Employee object.",
+                        "description": "A reference to the employee object.",
                         "format": "int64",
                         "type": "integer"
                     },
@@ -3033,15 +2916,15 @@
                         "type": "array"
                     },
                     "excludeInconsequentialEvents": {
-                        "description": "If false - returns all events even without consequences.",
+                        "description": "A Boolean indicator of whether or not to exclude inconsequential events. When false, returns all events regardless of whether not not they have consequences.",
                         "type": "boolean"
                     },
                     "isManagerRole": {
-                        "description": "A flag that indicates whether user has a manager role.",
+                        "description": "A Boolean indicator of whether or not a user has the manager role.",
                         "type": "boolean"
                     },
                     "wageLiabilityCalculated": {
-                        "description": "Flag that indicates whether Wage Liability attribute should be calculated and included in the response.",
+                        "description": "A Boolean indicator of whether or not the Wage Liability attribute is calculated and included in the response.",
                         "type": "boolean"
                     }
                 },
@@ -3072,10 +2955,10 @@
                 "type": "object"
             },
             "UpsertDateMarkerRequestContext": {
-                "description": "Request Context to create/update Ignore History Marker and Ignore Timecard Marker.",
+                "description": "Create or Update Ignore History Marker and Ignore Timecard Marker request model.",
                 "properties": {
                     "dateTime": {
-                        "description": "Date.",
+                        "description": "The date in ISO_LOCAL_DATE format (YYYY-MM-DD).",
                         "type": "string"
                     },
                     "employees": {
@@ -3131,7 +3014,7 @@
                 "type": "object"
             },
             "DeleteDateMarkerRequestContext": {
-                "description": "Request Context to delete Ignore History Marker and Ignore Timecard Marker.\")",
+                "description": "The Delete Ignore History Marker and Ignore Timecard Marker request model.",
                 "properties": {
                     "employees": {
                         "$ref": "#/components/schemas/ObjectReferenceList"
@@ -3321,7 +3204,7 @@
                 "type": "object"
             },
             "ApplyRuleRequestContext": {
-                "description": "Request Context for applying rules.",
+                "description": "The Apply Rules request model.",
                 "properties": {
                     "employees": {
                         "$ref": "#/components/schemas/ObjectReferenceList"
@@ -3335,7 +3218,7 @@
                         "type": "string"
                     },
                     "useDefaultStartDate": {
-                        "description": "A flag that specifies whether default start date should be used.",
+                        "description": "A Boolean indicator of whether or not to use the default start date.",
                         "type": "boolean"
                     }
                 },
@@ -3497,10 +3380,10 @@
                 "type": "object"
             },
             "ObjectReference": {
-                "description": "This model is used as a reference to the target entity.",
+                "description": "Model for object reference.",
                 "properties": {
                     "id": {
-                        "description": "The ID of the entity being referred by the object.",
+                        "description": "The ID of an object reference.",
                         "format": "int64",
                         "type": "integer"
                     },
@@ -4023,40 +3906,40 @@
                 "type": "object"
             },
             "SchedulingEventDetails": {
-                "description": "Context for Scheduling details.",
+                "description": "Detailed information about the schedule",
                 "properties": {
                     "endDateTime": {
-                        "description": "The end date and time of an event in ISO_LOCAL_DATE_TIME format (yyyy-mm-ddThh:mm:ss.sss).",
+                        "description": "The end date and time",
                         "type": "string"
                     },
                     "endTime": {
-                        "description": "The end time of an event.",
+                        "description": "End time",
                         "type": "string"
                     },
                     "forever": {
-                        "description": "A Boolean indicator of whether or not an event is forever.",
+                        "description": "If the end time of the schedule is not specified, the end time is forever.",
                         "type": "boolean"
                     },
                     "frequency": {
-                        "description": "The frequency of an event.",
+                        "description": "Frequency of the event.",
                         "type": "string"
                     },
                     "frequencyType": {
-                        "description": "The frequency type of an event, such as monthly.",
+                        "description": "Type of frequency. Examples: monthly, weekly, daily.",
                         "format": "int32",
                         "type": "integer"
                     },
                     "interval": {
-                        "description": "The interval between events.",
+                        "description": "Time interval between event runs.",
                         "format": "int32",
                         "type": "integer"
                     },
                     "startDateTime": {
-                        "description": "The start date and time of an event in ISO_LOCAL_DATE_TIME format (yyyy-mm-ddThh:mm:ss.sss).",
+                        "description": "The start date and time",
                         "type": "string"
                     },
                     "startTime": {
-                        "description": "The start time of an event.",
+                        "description": "Start time",
                         "type": "string"
                     }
                 },
@@ -4425,5 +4308,5 @@
                 "type": "object"
             }
         }
-    }
+}
 }

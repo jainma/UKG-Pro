@@ -482,7 +482,7 @@ paths:
           description: >-
             <ul><li>[WFA-000007] - Entity or entities not found. Type: Activity.
             Name or names or ID or IDs: {id}.</li></ul>
-      summary: Returns an activity by combined name only.
+      summary: Returns an activity by combined name.
       tags:
         - Activities
     post:

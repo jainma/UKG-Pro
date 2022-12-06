@@ -5,8 +5,6 @@ category: 638cc41be88294001cdb9daf
 ---
 
 
-If these requirements are not met, the request fails.
-
 If you are using a token provided by an OAuth compatible federated identity management (IDP) system that has been properly interfaced with your tenant, include the federated token as your `access_token` value just as you would use a Dimensions-generated `access_token`.
 
 Follow the instructions in this topic if you are building an application intended to interface with a wide vatiety of tenants, each of which might use a different IDP with a variety of possible configurations, or if your application needs to be able to request a set of tokens from a tenant interfaced with a federated identity management system that is not able to provide tokens directly.

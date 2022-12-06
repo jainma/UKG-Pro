@@ -139,7 +139,7 @@
                         "description": "Not Found."
                     }
                 },
-                "summary": "Returns all work units.",
+                "summary": "Returns all work",
                 "tags": [
                     "Work Units"
                 ]

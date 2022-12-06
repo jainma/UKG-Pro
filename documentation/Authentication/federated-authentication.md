@@ -5,7 +5,7 @@ category: 638cc41be88294001cdb9daf
 ---
 
 
-authenticated and made over HTTPS. If these requirements are not met, the request fails.
+If these requirements are not met, the request fails.
 
 If you are using a token provided by an OAuth compatible federated identity management (IDP) system that has been properly interfaced with your tenant, include the federated token as your `access_token` value just as you would use a Dimensions-generated `access_token`.
 

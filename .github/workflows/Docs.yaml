@@ -12,45 +12,22 @@ jobs:
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
+          
+       # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
+      - name: GitHub Action
+        # We recommend specifying a fixed version, i.e. @8.0.2
+        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
+        uses: readmeio/rdme@8.0.2
+        with:
+         rdme: docs ./documentation/Authentication --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0
 
-      # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
+       # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
         # We recommend specifying a fixed version, i.e. @8.0.2
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Work.json --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219  --id=6389e7d4a8beeb002c0c7755 
-
-         # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
-      - name: GitHub Action
-        # We recommend specifying a fixed version, i.e. @8.0.2
-        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
-        uses: readmeio/rdme@8.0.2
-        with:
-          rdme: openapi Common-Resources-II.json --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219  --id=638f6c7e80ca2300b409fcfc 
-
-        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
-      - name: GitHub Action
-        # We recommend specifying a fixed version, i.e. @8.0.2
-        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
-        uses: readmeio/rdme@8.0.2
-        with:
-          rdme: openapi Forecasting.json --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219  --id=638f588f3dd034000fcc9b3b 
-
-        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
-      - name: GitHub Action
-        # We recommend specifying a fixed version, i.e. @8.0.2
-        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
-        uses: readmeio/rdme@8.0.2
-        with:
-          rdme: openapi Forecasting-Setup.json --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219  --id=638f5b2b0fba8e00a30de3cd 
-        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
-      - name: GitHub Action
-        # We recommend specifying a fixed version, i.e. @8.0.2
-        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
-        uses: readmeio/rdme@8.0.2
-        with:
-          rdme: openapi Healthcare-Analytics.json --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219  --id=638f5d206f1cdd01652ac837
+         rdme: docs ./documentation/Best-Practices --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
 
           # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -58,21 +35,43 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Timekeeping-Timecards.json  --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219  --id=638f6179c1eae90887fd230e 
-
-        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
-      - name: GitHub Action
-        # We recommend specifying a fixed version, i.e. @8.0.2
-        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
-        uses: readmeio/rdme@8.0.2
-        with:
-          rdme: openapi Timekeeping-Setup.json --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219  --id=638f6201fcadd90025897228 
-
-        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
-      - name: GitHub Action
-        # We recommend specifying a fixed version, i.e. @8.0.2
-        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
-        uses: readmeio/rdme@8.0.2
-        with:
-          rdme: openapi Timekeeping.json --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219  --id=638f62aa60b71f035988c6aa    
+         rdme: docs ./documentation/Best-Practices --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
       
+        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
+      - name: GitHub Action
+        # We recommend specifying a fixed version, i.e. @8.0.2
+        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
+        uses: readmeio/rdme@8.0.2
+        with:
+         rdme: docs ./documentation/Examples --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
+
+          # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
+      - name: GitHub Action
+        # We recommend specifying a fixed version, i.e. @8.0.2
+        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
+        uses: readmeio/rdme@8.0.2
+        with:
+         rdme: docs ./documentation/General --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
+
+          # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
+      - name: GitHub Action
+        # We recommend specifying a fixed version, i.e. @8.0.2
+        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
+        uses: readmeio/rdme@8.0.2
+        with:
+         rdme: docs ./documentation/Getting-Started --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
+
+          # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
+      - name: GitHub Action
+        # We recommend specifying a fixed version, i.e. @8.0.2
+        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
+        uses: readmeio/rdme@8.0.2
+        with:
+         rdme: docs ./documentation/Overview --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0 
+         
+      - name: GitHub Action
+        # We recommend specifying a fixed version, i.e. @8.0.2
+        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
+        uses: readmeio/rdme@8.0.2
+        with:
+         rdme: docs ./documentation/Quick-Start --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0   

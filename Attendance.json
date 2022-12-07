@@ -2296,7 +2296,7 @@
                         "$ref": "#/components/schemas/ObjectReferenceList"
                     },
                     "isManagerRole": {
-                        "description": "A Boolean indicator of whether or not a user has the manager role.",
+                        "description": "A Boolean indicator of whether manager role.",
                         "type": "boolean"
                     }
                 },

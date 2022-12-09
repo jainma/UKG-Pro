@@ -20,7 +20,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-         rdme: docs ./documentation/Authentication --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0
+         rdme: docs ./documentation/Authentication --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23 --version=3.0
 
        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -28,7 +28,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-         rdme: docs ./documentation/Best-Practices --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
+         rdme: docs ./documentation/Best-Practices --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23 --version=3.0  
 
           # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -36,7 +36,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-         rdme: docs ./documentation/Best-Practices --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
+         rdme: docs ./documentation/Best-Practices --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23 --version=3.0  
       
         # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -44,7 +44,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-         rdme: docs ./documentation/Examples --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
+         rdme: docs ./documentation/Examples --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23 --version=3.0  
 
           # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -52,7 +52,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-         rdme: docs ./documentation/General --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
+         rdme: docs ./documentation/General --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23 --version=3.0  
 
           # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -60,7 +60,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-         rdme: docs ./documentation/Getting-Started --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0  
+         rdme: docs ./documentation/Getting-Started --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23 --version=3.0  
 
           # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -68,11 +68,11 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-         rdme: docs ./documentation/Overview --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0 
+         rdme: docs ./documentation/Overview --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23 --version=3.0 
          
       - name: GitHub Action
         # We recommend specifying a fixed version, i.e. @8.0.2
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-         rdme: docs ./documentation/Quick-Start --key=rdme_xn8s9hccadc97d600faa34896ed8d52f7143fea4aead8795030765284fe0b91cc57219 --version=3.0   
+         rdme: docs ./documentation/Quick-Start --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23 --version=3.0   

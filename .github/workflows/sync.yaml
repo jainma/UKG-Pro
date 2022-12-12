@@ -20,7 +20,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Work.json --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23  --id=6389e7d4a8beeb002c0c7755 
+          rdme: openapi Work.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
 
          # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -28,7 +28,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Common-Resources-II.json --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23  --id=638f6c7e80ca2300b409fcfc 
+          rdme: openapi Common-Resources-II.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
 
         # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -36,7 +36,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Forecasting.json --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23  --id=638f588f3dd034000fcc9b3b 
+          rdme: openapi Forecasting.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
 
         # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -44,14 +44,14 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Forecasting-Setup.json --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23  --id=638f5b2b0fba8e00a30de3cd 
+          rdme: openapi Forecasting-Setup.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
         # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
         # We recommend specifying a fixed version, i.e. @8.0.2
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Healthcare-Analytics.json --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23  --id=638f5d206f1cdd01652ac837
+          rdme: openapi Healthcare-Analytics.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
 
           # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -59,7 +59,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Timekeeping-Timecards.json  --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23  --id=638f6179c1eae90887fd230e 
+          rdme: openapi Timekeeping-Timecards.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
 
         # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -67,7 +67,7 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Timekeeping-Setup.json --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23  --id=638f6201fcadd90025897228 
+          rdme: openapi Timekeeping-Setup.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
 
         # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
       - name: GitHub Action
@@ -75,5 +75,5 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Timekeeping.json --key=rdme_xn8s9h851bea10ccf0672a35e81e663f1caf09c63782dbd3a39fb9514b86f8f7604e23  --id=638f62aa60b71f035988c6aa    
+          rdme: openapi Timekeeping.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
       

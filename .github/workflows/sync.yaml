@@ -38,19 +38,4 @@ jobs:
         with:
           rdme: openapi Forecasting.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
 
-        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
-      - name: GitHub Action
-        # We recommend specifying a fixed version, i.e. @8.0.2
-        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
-        uses: readmeio/rdme@8.0.2
-        with:
-          rdme: openapi Forecasting-Setup.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
-        # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
-      - name: GitHub Action
-        # We recommend specifying a fixed version, i.e. @8.0.2
-        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
-        uses: readmeio/rdme@8.0.2
-        with:
-          rdme: openapi Healthcare-Analytics.json --key=${{ secrets.README_API_KEY }} --id=API_DEFINITION_ID
-
-        
+       

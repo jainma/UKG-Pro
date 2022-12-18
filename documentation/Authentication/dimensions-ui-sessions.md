@@ -7,7 +7,7 @@ category: 638cc41be88294001cdb9daf
 
 # Manage Dimensions UI sessions
 
-The API allows you to manage certain aspects of Dimensions UI sessions. 
+
 
 Currently, the API supports logging out a session.
 

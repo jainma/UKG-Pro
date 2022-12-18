@@ -3,8 +3,10 @@ name: Json Sync
 # Run workflow for every push to the `main` branch
 on:
   push:
+    branches:
+      - main
     paths:
-      - '\.github\workflows\Create\**'
+      - '.github\workflows\Create\**'
 
 jobs:
   sync:

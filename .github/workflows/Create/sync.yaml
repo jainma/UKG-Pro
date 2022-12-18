@@ -1,0 +1,27 @@
+name: Json Sync 
+
+# Run workflow for every push to the `main` branch
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'github/workflows/Create/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v3
+  
+
+      # Run GitHub Action to sync OpenAPI file at [path-to-file.json]
+      - name: GitHub Action
+        # We recommend specifying a fixed version, i.e. @8.0.2
+        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
+        uses: readmeio/rdme@8.0.2
+        with:
+          rdme: openapi Work.json --key=${{ secrets.README_API_KEY }} --version=v3.0 --create
+
+         

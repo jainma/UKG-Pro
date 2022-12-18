@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'github/workflows/Update/**'
 
 jobs:
   sync:
@@ -20,6 +22,6 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Work.json --key=${{ secrets.README_API_KEY }} --version=v3.0 --create
+          rdme: openapi Work.json --key=${{ secrets.README_API_KEY }} --id=${{ secrets.API_DEFINITION_ID }}
 
          

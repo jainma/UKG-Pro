@@ -20,6 +20,6 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@8.0.2
         with:
-          rdme: openapi Work.json -version=v3.0 --create
+          rdme: openapi Work.json --version=v3.0 --create
 
          

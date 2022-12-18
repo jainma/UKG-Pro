@@ -4,7 +4,7 @@ name: Json Sync
 on:
   push:
     paths:
-      - '.github\workflows\Create\**'
+      - '\.github\workflows\Create\**'
 
 jobs:
   sync:

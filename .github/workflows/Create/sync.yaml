@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - '.github\workflows\Create\**'
+      - '\.github\workflows\Create\**'
 
 jobs:
   sync:
